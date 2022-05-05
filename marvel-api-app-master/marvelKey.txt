@@ -1,0 +1,5 @@
+Marvel API
+Your public key
+8dd756a18a2e358ccdc356558415ebf9
+Your private key
+70d7843865e76d80b217b5918832131e9dc62fb7
