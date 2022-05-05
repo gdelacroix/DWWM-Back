@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Un petit formulaire</title>
+</head>
+<body>
+<h1>Un petit formulaire (pour commencer)</h1>
+<p>Merci de renseigner les informations suivantes :</p>
+
+<form name="toto" action="formulbis.php" method="get">
+<table align="left">
+ <tr>
+   <td>Votre nom :</td><td><input type="text" name = "nom" size="30"></td>
+ </tr>
+ <tr>
+   <td>Votre âge :</td><td><input type="text" name = "age" size="3"></td>
+ </tr>
+ <tr>
+   <td>Votre situation maritale :</td>
+   <td>
+      <input type="radio" name="marit" value="marié" checked>Marié&nbsp;
+      <input type="radio" name = "marit" value="veuf">Veuf(ve)&nbsp;
+      <input type="radio" name = "marit" value="célibataire">Célibataire&nbsp;
+   </td> 
+  </tr>
+ <tr>
+   <td>Vos centres d'intérêt :</td>
+   <td>
+      <input type="checkbox" name = "interet[]" value="internet" checked>Internet&nbsp;
+      <input type="checkbox" name = "interet[]" value="micro">Micro-informatique&nbsp;
+      <input type="checkbox" name = "interet[]" value="jeux">Jeux Vidéo&nbsp;
+   </td> 
+  </tr>
+  <tr>
+  	<td><input type="reset" value="Recommencer"></td>
+	<td><input type="submit" value="Envoyer"></td>
+  </tr>
+ </table>
+</form>
+
+<p>&nbsp;</p> 
+<p><a href="serveur.php?toto=titi">Un petit coup de variables serveur ?</a></p>   
+</body>
+</html>
