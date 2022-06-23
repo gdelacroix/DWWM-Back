@@ -1,0 +1,178 @@
+body {
+  font: 1em sans-serif;
+  padding: 0;
+  margin: 0;
+  background: url('../images/bibliotheque.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin:0;
+  padding: 0;
+}
+.flex-container{
+  background: #000;
+  display: block flex;
+  width: 100%;
+  flex-direction: row;
+
+}
+.flex-item{
+display: flex;}
+h1{
+  color: white;
+  font-family: 'Cookie', cursive;
+font-family: 'Special Elite', cursive;
+}
+
+form {
+  max-width: 300px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+label {
+  display: block;
+  color: #A46490;
+  position: left;
+}
+
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+input[type=text],
+input[type=email],
+
+textarea,
+fieldset {
+  /* requis pour composer de manière appropriée les éléments
+     de formulaire sur les navigateurs fondés sur WebKit */
+  -webkit-appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+#erreur {
+  color: red;
+}
+.container_card{
+  display: flex;
+flex-direction: column;
+;
+ 
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  margin-left: 25%;
+  width: 50%;
+  background-color: rgba(53, 49, 51, 0.80);
+ 
+  border: 5px groove black;
+  
+}
+.button{
+  color: blue;
+}
+;.info-cache{
+  color:white;
+}
+h2{
+  text-align: center;
+  color: cadetblue;
+}
+img{
+  position: relative;
+
+}
+h4{
+  text-align: right;
+  left:10px;
+  color: white;
+}
+.offcanvas-header {
+  background: royalblue;
+}
+.offcanvas-body.small{
+  background: rgba(53, 49, 51, 0.80);
+}
+h5{
+  color: #fff;
+}
+
+input[type=number],
+textarea,
+fieldset {
+  width: 25%;
+  height: 30%;
+}
+.tableau{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px groove black
+  
+}
+p{
+  color: #fff;
+}
+.info-produit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: 20%;
+}
+.imgpanier{
+  width: 20%;
+}
+
+@media screen and (max-width:690px) {
+  .container_card{
+position: left;   
+ width: 100%;
+ display: flex;
+ align-items: end;
+  }
+  .card{
+    width:100%;
+    
+    
+  }
+  h2{
+   font-size: 15px;
+  }
+  .info-cache{
+    display: none;
+  }
+}
+@media screen and (min-width:691px ) and (max-width:1180px){
+  .container_card{
+display: flex;
+  }
+  h2{
+    font-size: 20px;
+  }
+  
+}

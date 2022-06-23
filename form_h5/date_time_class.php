@@ -1,0 +1,9 @@
+<?php class date_time extends time{protected $classe = __CLASS__;static $compteur = 0;protected $readonly;protected $dh;const TYPE = 'datetime';function __construct( $param=NULL ){$this::$compteur++;$refparam = 'time';
+BASE_TEXT::__construct( $param, $refparam );$this->set_list( $refparam[0] );$this->set_readonly( $refparam[1] );parent::set_float_format( $refparam[4], $this->step, '+' );$this->set_datetime( $refparam[2], $this->min );$this->set_datetime( $refparam[3], $this->max );
+if( $this->value == NULL ){$this->set_value( strftime( '%Y-%m-%dT%H:%M:%SZ' ) );}else{$this->set_value_datetime( $this->value );}$this->pattern = NULL;$this->maxlength = NULL;$this->size = NULL;$this->placeholder = NULL;}
+private function set_dec_horaire( $arg=NULL ){$t = abs( $arg );$heure = floor( $t/60 );$mn = $t - $heure*60;if( $arg < 0 ){return sprintf( '+%02d:%02d', $heure, $mn );}elseif( $arg == 0 ){return 'Z';}else{return sprintf( '-%02d:%02d', $heure, $mn );
+}}protected function set_datetime( $arg = NULL, & $val = NULL ){$tmp = date_parse( $arg );if( $tmp['error_count'] > 0 || $tmp[ 'warning_count'] > 0 ){return;}$arg = sprintf( '%d-%02d-%02dT%02d:%02d:%02d', $tmp['year'], $tmp['month'], $tmp['day'],
+$tmp['hour'], $tmp['minute'], $tmp['second'] );if( isset( $tmp['zone'] ) ){$arg .= $this->set_dec_horaire( $tmp['zone'] );}else{$arg .= 'Z';}$val = $arg;}
+private function test_dtdel( $tab, $key ){$this->set_datetime( $tab, $t );if( $t == NULL ){array_splice( $this->value, $key );}else{$this->value[$key] = $t;}}
+protected function set_value_datetime( $arg = NULL ){if( is_array( $arg ) ){array_walk( $arg, 'DATE_TIME::test_dtdel' );}else{$this->value = NULL;}}
+function write( $screen = NULL ){parent::write( $screen );}}?>

@@ -1,0 +1,19 @@
+<?php class time extends range{protected $classe = __CLASS__;static $compteur = 0;protected $readonly;protected $format;const TYPE = 'time';function __construct( $param=NULL ){$this::$compteur++;$refparam = 'time';
+BASE_TEXT::__construct( $param, $refparam );$this->set_list( $refparam[0] );$this->set_readonly( $refparam[1] );$this->format = $this->set_format_time( $refparam[5] );if( $this->format == 'G:i:s.u' || $this->format == 'auto'  ){parent::set_float_format( $refparam[4], $this->step, '+' );}else{
+parent::set_float_format( $refparam[4], $this->step, '+INT' );}$this->set_time( $refparam[2], $this->min );$this->set_time( $refparam[3], $this->max );if( $this->value == NULL ){$this->set_value( strftime( '%H:%M' ) );}else{$this->set_value_time( $this->value );}$this->pattern = NULL;$this->maxlength = NULL;
+$this->size = NULL;$this->placeholder = NULL;}
+private function test_tdel( $tab, $key ){$this->set_time( $tab, $t );if( $t == NULL ){array_splice( $this->value, $key );}else{$this->value[$key] = $t;}}
+protected function set_value_time( $arg = NULL ){if( is_array( $arg ) ){array_walk( $arg, 'TIME::test_tdel' );}else{$this->value = NULL;}}
+protected function set_time( $arg=NULL, & $val=NULL ){switch( $this->format ){case 'G:i':$tmp = date_parse_from_format( 'G:i', $arg );$arg = sprintf( "%02d:%02d", $tmp['hour'], $tmp['minute'] );break;case 'G:i:s':
+$tmp = date_parse_from_format( 'G:i:s', $arg );$arg = sprintf("%02d:%02d:%02d", $tmp['hour'], $tmp['minute'],$tmp['second']);break;case 'G:i:s.u':$tmp = date_parse_from_format( 'G:i:s.u', $arg );$arg = sprintf("%02d:%02d:%02d.%-03s", $tmp['hour'], $tmp['minute'],
+$tmp['second'], substr( $tmp['fraction'], 2) );break;default:$tmp = date_parse( $arg );$c = strpos( $arg, '.' );if( $c > 0 ){$c = 1;}$h = substr_count( $arg, ':' );$h += $c;switch( $h ){case 1:$arg = sprintf( "%02d:%02d", $tmp['hour'], $tmp['minute'] );break;case 2:
+$arg = sprintf("%02d:%02d:%02d", $tmp['hour'], $tmp['minute'],$tmp['second']);break;case 3:$arg = sprintf("%02d:%02d:%02d.%-03s", $tmp['hour'], $tmp['minute'],$tmp['second'], substr( $tmp['fraction'], 2) );}}if( $tmp['error_count'] == 0 && $tmp[ 'warning_count'] == 0 ){$val = $arg;}}
+protected function set_format_time( $arg=NULL ){if( strcasecmp( $arg, 'auto' ) == 0 ){return 'auto';}elseif( strcasecmp( $arg, 'h:m:s' ) == 0 || 'G:i:s' == $arg ){return 'G:i:s';}elseif( strcasecmp( $arg, 'h:m:s.c' ) == 0 || 'G:i:s.u' == $arg ){
+return 'G:i:s.u';}else{return 'G:i';}}
+function write( $screen = NULL ){$name = $this->name;for( $i = 1; $i <= $this->number; $i++ ){$step = NULL;if( $this->number > 1 ){ $name = $this->name.'[]'; }$l1 = '<input name="'.$name.'" type="'.$this::TYPE.'"';$lab = '';
+parent::multi_write( $i, $l1, $lab );if( $this->css != NULL ){$l1 .= ' '.$this->css;}if( $this->source != NULL ){$l1 .= ' '.$this->source;}if( isset( $this->value[$i-1] ) ){$l1 .= ' value="'.$this->value[$i-1].'"';if( strlen( $this->value[$i-1] ) > 5 ){$step = $this->step;}}
+if( $this->autocomplete == '1' ){$l1 .= ' autocomplete="on"';}if( $this->autocomplete == '0' ){$l1 .= ' autocomplete="off"';}if( $this->autofocus == '1' && $i < 2 ){$l1 .= ' autofocus="autofocus"';}if( $this->list != NULL ){$l1 .= ' list="'.$this->list.'"';}
+if( $this->readonly != NULL ){$l1 .= ' readonly="readonly"';}if( $this->required != NULL ){$l1 .= ' required="required"';}if( $this->form != NULL ){$l1 .= ' form="'.$this->form.'"';}if( $this->min != NULL ){$l1 .= ' min="'.$this->min.'"';}if( $this->max != NULL ){
+$l1 .= ' max="'.$this->max.'"';}if( $step != NULL ){$l1 .= ' step="'.$this->step.'"';}if( $this->globalattr != NULL ){$l1 .= $this->globalattr->write_globalattr( $i );}$l1 .= '>';switch( $this->past ){case 1:$l1 = $l1.$lab;break;case 0:$l1 = $lab.$l1;break;}
+if( $this->br != NULL ){ $l1.= $this->br; }
+if( $screen == NULL ){echo $l1, "\n";}else{echo htmlentities( $l1, ENT_QUOTES ), "\n";}}}}?>

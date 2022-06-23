@@ -1,0 +1,12 @@
+<?php class datalist extends analyse{protected $classe = __CLASS__;static $compteur = 0;protected $number = 1;const TYPE = 'datalist';function __construct( $param=NULL ){$this::$compteur++;$st = parent::string_array( $param );if( $st !== NULL ){
+$valtmp = parent::format_parameter( $param, $st );parent::tri_parameter( $valtmp[0] );}else{$valtmp[0]= get_class_vars( $this->classe );}parent::set_name( $valtmp[0]['name'] );parent::set_id( $valtmp[0]['id'] );parent::set_css( $valtmp[0]['css'] );parent::set_source( $valtmp[0]['source'] );
+$this->set_number( $valtmp[0]['number'] );$this->set_value_datalist( $valtmp[0]['value'] );if( $this->globalattr == 1 ){$this->globalattr = new global_attr( $valtmp[0]['accesskey'],$valtmp[0]['contenteditable'], $valtmp[0]['contextmenu'], $valtmp[0]['draggable'],
+$valtmp[0]['hidden'], $valtmp[0]['spellcheck'], $valtmp[0]['tabindex'],$valtmp[0]['title'], $valtmp[0]['dropzone'] );}}
+private function set_number( $arg=NULL ){if( $arg == NULL ){$this->number = 1;}elseif( ctype_digit( $arg ) && ($arg > 1) && ($arg <= self::MAXNUMBER)  ){$this->number = $arg;}}
+private function test_dldel( & $tab, $key ){if( !is_string( $tab ) ){$tab = NULL;}else{$tab = htmlentities( trim($tab), ENT_QUOTES, 'UTF-8' );}}
+private function test_null( $tab ){if( !is_null( $tab ) ){return TRUE;}}
+protected function set_value_datalist( $arg = NULL ){$v = $this->string_array( $arg );if( $v ){$this->value = array();$tmp = explode( '|', $arg );$this->_htmlentites( $tmp, 1 );$this->value[] = $tmp;}elseif( $v === FALSE ){$this->value = array();
+array_walk_recursive( $arg, 'DATALIST::test_dldel' );foreach( $arg as $el ){if( is_array( $el ) ){$tmp = array_filter( $el, 'DATALIST::test_null' );if( !empty( $tmp ) ){$this->value[] = $tmp;}}else{$this->value[] = array($el);}}}else{$this->value = NULL;}}
+function write( $screen = NULL ){$name = $this->name;$nbr_value = count( $this->value );if( $nbr_value < $this->number ){$this->number = $nbr_value;}for( $i = 1; $i <= $this->number; $i++ ){$l1 = '<datalist';$lab = '';
+parent::multi_write( $i, $l1, $lab );if( $this->css != NULL ){$l1 .= ' '.$this->css;}if( $this->source != NULL ){$l1 .= ' '.$this->source;}if( $this->globalattr != NULL ){$l1 .= $this->globalattr->write_globalattr( $i );}$l1 .= '>';if( isset( $this->value[$i-1] ) ){
+foreach( $this->value[$i-1] as $el ){$l1 .= '<option value="'.$el.'">';}}$l1 .= '</datalist>';if( $screen == NULL ){echo $l1, "\n";}else{echo htmlentities( $l1, ENT_QUOTES ), "\n";}}}}?>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Les BD</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- <div class="container">
+                <div class="icon">---</div>
+                <div class="temp">-°C</div>
+                <div class="summary">----</div>
+                <div class="location"></div>
+              </div> -->
+            <h1>Liste des BD</h1>
+
+            <div class="row">
+
+                <div class="recherche_p">
+                    <input type="text" placeholder="recherche"
+                        id="in" value="">
+                    <button type="button" onclick="getValueAuteur();">recherche
+                        par auteur</button>
+                    <button type="button" onclick="getValueSerie();">recherche
+                        par série</button>
+                </div>
+
+                <!-- <div class="col-sm-4 col-lg-6">
+                <p id="messageId">
+                    <label for="id">Id de l'album :</label>
+                    <input type="number" required id="id" value="0" min="0" title="Saisissez un numéro et validez">
+                </p>
+                <p>
+                    <label for="serie">Série :</label>
+                    <input type="text" id="serie" readonly>
+                    <label for="numero">Album N° :</label>
+                    <input type="text" id="numero" readonly>
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" readonly>
+                    <label for="auteur">Auteur :</label>
+                    <input type="search" id="auteur"  readonly>
+                </p>
+                <p>
+                    <label for="prix">Prix :</label>
+                    <input type="number" id="prix" readonly>
+                </p> -->
+                <!-- <div id="toto">
+                    <img src="images/noComicsMini.jpeg" id="albumMini">
+                    <button type="button" class="add-to-cart" data-id="" data-name="" data-price="" data-weight="" data-url="">Ajouter au panier</button>
+                </div>
+            </div>
+            <div class="col-sm-8 col-lg-6">
+                <img src="images/noComics.jpeg" id="album">
+            </div>-->
+            </div>
+            <div id="preview"></div>
+
+            <!-- panier-->
+            <div class="checkout-container">
+                <div class="table">
+                    <span class="empty">Votre panier est vide!</span>
+
+                    <div class="col1-img"></div>
+                    <div class="col2-title"></div>
+                    <div class="col3-price"></div>
+                </div>
+                <div class="bin"><span>Vider le panier</span><img id="bin"
+                        class="add-animation2"
+                        src="/BD/images/blue-delete-button-png-29.png"
+                        style="width:40px" /></div>
+                <div class="total">
+                    <div class="total-text">Total :</div>
+                    <div class="total-amount">0 € </div>
+                </div>
+                <div class="checkout"
+                    onclick="document.getElementById('id01').style.display='block'">Paiement</div>
+            </div>
+         <!-- ----------------modal paiement------------- -->
+         <div id="id01" class="modal">
+            <div class="wrapper">
+              <div class="bill-content">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+              <h1 class="box-title"> Formulaire de paiement</h1>
+              <div class="price-total">
+                <div class="pay-last">0 €</div>
+              </div>
+              <form>
+                
+                <div class="form-text">
+                  <label>Numéro de carte</label>
+                  <input name="card-number" type="text" required>
+                </div>
+                <div class="form-text">
+                  <label>Crypto</label>
+                  <input name="name" type="text" placeholder="CVV" required>
+                </div>
+                <div class="form-text" id="col01">
+                  <label>Date d'expiration</label>
+                  <input name="card-number" type="text" placeholder="MM/YY" maxlength="3" required>
+                </div>
+                <div class="form-text"  id="col02">
+                  <label>Code promo</label>
+                  <input name="card-number" type="text">
+                </div>
+                
+                <button id="end">Payer maintenant</button>
+              </form>
+              </div>
+            </div>
+           </div> 
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <script src="data/albums.js"></script>
+        <script src="data/series.js"></script>
+        <script src="data/auteurs.js"></script>
+        <script src="js/modeleBD.js"></script>
+    </body>
+
+</html>

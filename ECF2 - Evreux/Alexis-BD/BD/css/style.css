@@ -1,0 +1,234 @@
+body {
+  font: 1em sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url(../images/e09b2ad69b1abdb8e014b30d79f23edd.jpg);
+  background-attachment: fixed;
+  font-family: 'Coming Soon', cursive;
+  font-weight: bold !important;
+}
+
+form {
+  max-width: 300px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+p>label {
+  display: block;
+}
+
+legend {
+  background-color: #000;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+textarea,
+fieldset {
+  /* requis pour composer de manière appropriée les éléments
+     de formulaire sur les navigateurs fondés sur WebKit */
+  -webkit-appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+#radioettruc label{
+  user-select: none;
+}
+
+#erreur {
+  color: red;
+}
+
+#listeBD{
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  margin-bottom: 60px;
+}
+
+#aucunResult{
+ grid-column: 1 / 7;
+ text-align: center;
+}
+
+.click{
+  width: 17px;
+  text-align: center;
+  background-color:#007bff;
+  border-color: #007bff;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.click:hover{
+  cursor: pointer;
+}
+
+#divPanier{
+  border: solid black 2px;
+  background-color: #ffd1ef;
+  width : 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#divPanier h1{
+  margin-left: 30px;
+}
+
+.btn{
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container{
+  border: #000 solid 2px;
+  background-color: azure;
+  width: 100%;
+}
+
+.credit{
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+@keyframes transition {
+  0%   { margin-top: 70px;opacity:0; }
+  100% { margin-top: 10px;opacity:1; }
+  }
+
+#toPanier{
+  margin-left: 35%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 2px 2px 2px 2px;
+  border-radius: .25rem;
+  color: #fff;
+  background-color:#007bff;
+  border-color: #007bff;
+  text-align: center;
+  width: 30%;
+  user-select: none;
+}
+
+#toPanier:hover{
+  cursor: pointer;
+}
+
+.bd{
+  opacity:0;animation: transition 1s ease-in-out 0s forwards;
+}
+
+.bd:hover{
+  cursor: pointer;
+}
+
+.row{
+  margin-bottom: 10px;
+}
+
+#albumMini{
+  display: none;
+}
+
+#radioettruc input{
+  margin-right: 4px;
+}
+
+#plusEtMoins{
+  display: flex;
+}
+
+#champRecherche{
+  margin-bottom: 10px;
+}
+
+#plusEtMoins{
+  user-select: none;
+}
+
+#api-meteo-p{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.appel-api-meteo{
+  background-color: #fff;
+  border: #000 solid 2px;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 400px){
+  #albumMini{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #listeBD{
+    grid-template-columns: 28% 28% 28%;
+  }
+
+  #radioettruc{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  #albumMini{
+    margin-left: 30%;
+    display: block;
+  }
+  
+  #toPanier{
+    margin-left: 15%;
+    width : 70%;
+  }
+
+  .col-sm-8{
+    display: none;
+  }
+
+  .btn{
+    margin-right: 5px;
+
+  }
+  #divPanier{
+    width: 100%
+  }
+  #divPanier h1{
+    margin-left: 5px;
+    font-size: 32px;
+  }
+
+  .credit{
+    margin-bottom: 130px;
+  }
+}

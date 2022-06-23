@@ -1,0 +1,210 @@
+/*
+#f2f2f2
+#f96c00
+#393d46
+#212832
+*/
+
+* {
+    color: #f2f2f2;
+}
+
+body {
+    overflow-x: hidden;
+    height: 150vh;
+    background: #212832;
+}
+
+.navbar {
+    background: #000 !important;
+    /* background: linear-gradient(to bottom, #000000 0%, #000000 74%, #000000 100%) !important; */
+}
+
+.navbar:hover {
+    transition: all 500ms ease !important;
+    background: linear-gradient(to bottom, #7B7B7B 0%, #000000 74%, #000000 100%) !important;
+
+}
+
+nav {
+    /* border-bottom: 1px solid #f96c00; */
+    border-bottom: 2px solid #fff;
+}
+
+
+.navbar-brand {
+    color: #f2f2f2;
+    padding-right: 10px;
+    border: 2px solid rgba(255, 255, 255, 0)
+}
+
+.navbar-brand:hover {
+    /* transform: scale(1.01); */
+    transition: all 500ms ease;
+    color: #f2f2f2;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.navbar-brand:focus {
+    color: f2f2f2 !important;
+}
+
+.navbar-brand:active {
+    color: f2f2f2 !important;
+}
+
+#carBDImage {
+    width: 250px;
+    height: 375px;
+    align-self: center;
+    justify-self: center;
+}
+
+#cardCont:hover {
+    transform: scale(1.1);
+    transition: 200ms ease-out;
+}
+
+.card {
+    border: 0px;
+    margin: 0 10px;
+}
+
+#carouselImgBD {
+    border: 2px solid grey;
+}
+
+.separation {
+    height: 56px;
+}
+
+
+
+/* Test */
+input#searchbar:hover {
+    border: 2px solid green !important;
+}
+
+/* Test */
+
+#resultSection {
+    margin-top: 140px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#carouselSection {
+    margin-top: 15vh;
+}
+
+
+#cardsResult {
+    display: flex;
+    justify-content: center;
+}
+
+#cartButton {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    height: 40px;
+    top: 335px;
+    left: 174.45px;
+}
+
+#cardCont:hover #cartButton {
+    z-index: 1;
+    opacity: 1;
+    transition: 200ms ease-in-out;
+}
+
+#cardCont:hover #cardPrice {
+    z-index: 1;
+    opacity: 1;
+    transition: 200ms ease-in-out;
+}
+
+#cardPrice {
+    position: absolute;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    height: 40px;
+    width: 70px;
+    padding: 7px;
+    top: 335px;
+    border-radius: 0.375rem;
+    background: #555;
+    color: white;
+}
+
+#cardBody {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    width: 250px;
+    height: 375px;
+    color: black;
+}
+
+#cardCont:hover #cardBody {
+    z-index: 1;
+    opacity: 1;
+    background: #ffffffd5;
+    transition: 200ms ease;
+}
+
+#cardBodyTitle {
+    text-align: center;
+    padding-bottom: 3px;
+    border-bottom: 2px solid black;
+}
+
+.wrapInput {
+    top: 56px;
+    background: #ffffffbe;
+    color: black;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.albumID {
+    position: absolute;
+    visibility: hidden;
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid black;
+}
+
+#cartItem {
+    background: black;
+}
+
+#cartImg {
+    width: 80px;
+    height: 120px;
+}
+
+#cartItemID {
+    /* position: absolute; */
+    /* visibility: hidden; */
+}
+
+/* .btn  {
+    border: 2px solid rgba(0, 0, 0, 0) !important;
+} */
+
+/* .btn:hover {
+    transition: all 500ms ease;
+    border: 2px solid white !important
+} */
+
+@media all and (max-width: 340px) {
+    #resultSection {
+        margin-top: 180px;
+    }
+}

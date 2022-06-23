@@ -1,0 +1,12 @@
+<?php class form extends base_form{protected $classe = __CLASS__;
+function __construct( $param=NULL ){$st = parent::string_array( $param );$tmp = array( array('name'=>NULL, 'id'=>NULL,'css'=>NULL, 'source'=>NULL, 'action'=>NULL,'enctype'=>NULL, 'method'=>NULL, 'target'=>NULL, 'novalidate'=>NULL,'autocomplete'=>NULL  ) );
+if( $st !== NULL ){if( $st === FALSE ){$this->track_form( $param, $tmp, $st );}else{$pa = parent::format_parameter( $param, $st );$this->track_form( $pa, $tmp, 2 );
+}}else{$tmp[0]= get_class_vars( $this->classe );}parent::set_name( $tmp[0]['name'] );parent::set_id( $tmp[0]['id'] );parent::set_css( $tmp[0]['css'] );parent::set_source( $tmp[0]['source'] );parent::__construct( $tmp[0]['action'], $tmp[0]['enctype'], $tmp[0]['method'],
+$tmp[0]['target'], $tmp[0]['novalidate'], $tmp[0]['autocomplete'] );unset( $tmp[0] );foreach( $tmp as $el ){if( class_exists( $el['type'] ) && $el['type'] != 'button' ){$this->elements[] = new $el['type']( $el );}elseif( $el['type']=='reset' || $el['type']=='submit' || $el['type']=='image' ||
+$el['type']=='button'   ){$this->elements[] = new button( $el );}}}
+private function track_form( $param, & $tmp, $st ){try {foreach( $param as $k=>$el ){if( $st == 2 ){$el = array( $el );}else{$el = parent::format_parameter( $el, $st );}$type_fpos = array_key_exists( 'type', $el[0] );
+$action_fpos = array_key_exists( 'action', $el[0] );if( $type_fpos == 1 && $action_fpos == 1 ){throw new Exception( "bad parameter 'type' =>form()" );}if( $type_fpos == FALSE ){parent::tri_parameter( $el[0] );$tmp[0] = $el[0];}else{$tmp[] = $el[0];}}}catch( Exception $error ){
+echo $error->getMessage();}}
+function write( $screen = NULL ){$l1 = '<form action="'.$this->action.'" method="'.$this->method.'"'.' name="'.$this->name.'"';$l1 .= $this->autocomplete;$l1 .= $this->novalidate;if( $this->id != NULL ){$l1 .= ' id="'.$this->id.'"';}
+if( $this->target != NULL ){$l1 .= ' target="'.$this->target.'"';}if( $this->source != NULL ){$l1 .= ' '.$this->source;}$l1 .= '>';if( $screen == NULL ){echo $l1;foreach( $this->elements as $obj ){$obj->write();}echo '</form>';}else{echo htmlentities( $l1 );
+foreach( $this->elements as $obj ){$obj->write(1);}echo htmlentities( '</form>' );}}}?>

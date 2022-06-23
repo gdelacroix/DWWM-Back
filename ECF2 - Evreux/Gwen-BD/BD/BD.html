@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Les BD</title>
+</head>
+
+<body>
+    <div class="container " id="ensemble">
+
+
+        <h1 class="text">Liste des BD</h1>
+
+        <div class=" w-25 ">
+            <div class="">
+                <p id="messageId">
+                    <label for="id">Id de l'album :</label>
+                    <input type="number" required id="id" value="0" min="0" title="Saisissez un numéro et validez">
+                </p>
+                <p>
+                    <label for="serie">Série :</label>
+                    <input type="text" id="serie" readonly>
+
+                    <label for="numero">Album N° :</label>
+                    <input type="text" id="numero" readonly>
+
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" readonly>
+
+                    <label for="auteur">Auteur :</label>
+                    <input type="text" id="auteur" readonly>
+                </p>
+                <p>
+                    <label for="prix">Prix :</label>
+                    <input type="number" id="prix" readonly>
+                </p>
+                <div is="toto" class="m-2">
+                    <img src="images/noComicsMini.jpeg" id="albumMini">
+                </div>
+            </div>
+            <div class="">
+
+                <img src="images/noComics.jpeg" id="album" class="">
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <button id="myBtn1">Meteo</button>
+
+
+    <div id="myModal1" class="modal1">
+
+
+        <div class="modal-content1">
+            <div class="modal-header1">
+                <span class="close1">&times;</span>
+                <h2>Meteo</h2>
+            </div>
+            <div class="modal-body1">
+
+
+
+                <div class="bg-white">
+                    <input class="w-25" id="queryLoc" type="text" value="Evreux ">
+                    <input type="button" value="Recherche" onclick="buttonClickGET()">
+                    <p id="zone_meteo">Pas de température, lance une recherche</p>
+
+
+                </div>
+            </div>
+            <div class="modal-footer1">
+                <h3>Weather</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div id="menu">
+
+
+
+        <div class="container" id="bouton">
+            <h1> Trier par </h1>
+            <button onclick=" tousLesAlbums()">Tous les livres</button>
+            <button onclick="RechercheParSerie()">Tri par série</button>
+            <button onclick="RechercheParAuteur()">Tri par auteur</button>
+            <br>
+
+
+
+
+
+
+
+
+            <div class="w-25">
+
+                <input type="checkbox" id="checkAuteur" checked />&nbsp;&nbsp;Auteur<br />
+                <input type="checkbox" class="checkSerie" />&nbsp;&nbsp;Série
+            </div>
+
+
+
+
+            <input id="recherchee" class=" w-25" placeholder="Mots-clés">
+            <button onclick="recherche()" class="btn btn-outline-success my-2 my-sm-0   ">Recherche</button>
+
+
+
+            <div id="card">
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button></div>
+        </div>
+    </nav>
+
+
+    <!-- Main -->
+    <div class="container">
+
+        <div class="card  row " id="cardParent">
+
+            <div class="card-block" id="newtest">
+
+
+
+
+                <a href="#" data-name="Orange" data-price="0.5" class="add-to-cart btn btn-primary">Add to cart</a>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div>Total price: $<span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Order now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="data/albums.js"></script>
+    <script src="data/series.js"></script>
+    <script src="data/auteurs.js"></script>
+    <script src="js/modeleBD.js"></script>
+</body>
+
+</html>
