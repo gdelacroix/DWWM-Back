@@ -1,0 +1,73 @@
+body{
+    border: solid 2px black;/*Une bordure de 2 pixels de couleur noir*/
+    box-sizing: border-box;
+    height:30vh; /*Une hauteur de 30vh*/
+    width:420px;/*Le body est d'une largeur de 420 pixels*/
+    text-align: center;
+    box-shadow: 10px 5px 0px 5px red;
+    background: lightgrey;
+}
+
+
+h2{
+    background: rgb(48, 171, 247);
+    color:white;/*couleur blanc sur notre h2*/
+}
+
+select {
+    width: 200px;
+}
+
+label{
+    color: rgb(24, 188, 252);
+}
+.button1{
+    border-radius: 20px;/*un bouton arrondi sur les angles de 20px*/
+    cursor:pointer;
+    box-shadow: 2px 2px 0px 2px rgb(20, 174, 239);
+}
+.input1{
+    width: 200px;/*largeur zone de texte 200px de large*/
+    box-shadow: 1px 1px 1px 1px orange;
+}
+p{
+    color:blue;/*change la couleur du paragraphe*/
+}
+.number1{
+    width: 200px;
+    box-shadow: 2px 2px 2px 2px yellow;
+}
+.number2{
+    width: 200px;
+    box-shadow: 2px 2px 2px 2px green;
+}
+
+@media only screen and (min-width:150px) and (max-width:470px){
+    /*Methode pour adapter le document selon la taille écran*/
+    body{
+        border: solid 2px blue;
+        box-sizing: border-box;
+        max-width: 440px;/*La largeur ne dépassera pas 420px*/
+        min-width: 250px;/*La largeur sera minimum de 250px*/
+        background:lightskyblue;
+        box-shadow: 5px 5px 0px 5px green;
+    }
+    label{
+        color: red;
+    }
+    h2{
+        color:yellow;
+    }
+    p{
+        color:darkorchid;
+    }
+    .input1{
+        box-shadow: 2px 2px 2px 2px purple;
+    }
+    .number1{
+        box-shadow: 2px 2px 2px 2px red;
+    }
+    .number2{
+        box-shadow: 2px 2px 2px 2px darkturquoise;
+    }
+}

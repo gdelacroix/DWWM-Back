@@ -1,0 +1,18 @@
+Developpement du menu Admin 
+
+Developpement fonction création utilisateurs avec droit
+
+Creation page admin/mescommandes /Requete SAV
+
+Débug gestion produit/commande 
+
+Creation onglet OPTION et DOSSIER SAV
+
+Divers modification a la bdd et ses données.
+
+Bootstrap et CSS du site 
+
+
+
+
+

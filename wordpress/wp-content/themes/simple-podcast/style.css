@@ -1,0 +1,273 @@
+/*!
+Theme Name: Simple Podcast
+Theme URI: https://www.themesmandu.com/product/simple-podcast
+Author: Themesmandu
+Author URI: https://www.themesmandu.com/
+Description: Simple Podcast is a clean, modern responsive WordPress theme focused on podcast sites. This theme is intended for podcasters, youtubers, streamers, radio hosts, comedians, influencers, motivational speaker and bloggers.
+With the organized and attractive layouts, it is much easier to display your robust content throughout the theme. Simple Podcast is completely responsive and thus compatible with all kinds of modern browsers. You can easily upload episodes and publish it or schedule it. The sample demo content is just one click away with the import feature. This helps you quickly overview what the theme has to offer. Documentation http://themesmandu.com/documentation/simple-podcast/.
+Version: 1.0.7
+Requires at least: 5.3
+Tested up to: 5.6
+Requires PHP: 5.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: simple-podcast
+Tags: blog, entertainment, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, left-sidebar, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, accessibility-ready, sticky-post
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* -- Screen Reader Text Styles -- */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.screen-reader-text:focus {
+	background-color: #20aa73;
+	clip: auto !important;
+	-webkit-clip-path: none;
+	clip-path: none;
+	color: #ffffff;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	right: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+.sticky {
+    margin: 0 0 52px;
+    border: none;
+    border-radius: 0;
+}
+
+/* -- Skip Link Styles -- */
+
+.skip-link {
+    font-size: 12px;
+    padding: 5px 15px;
+    z-index: 99999;
+    top: 5px;
+    left: -9999em;
+}
+
+.skip-link:hover {
+    color: #ffffff;
+}
+
+.skip-link:focus {
+    scroll-behavior: smooth;
+    left: 5px;
+    right: unset;
+}
+
+.skip-link:hover {
+    text-decoration: none;
+}
+
+
+/* -- post-gallery figure -- */
+
+.gallery-item a {
+    display: unset;
+}
+
+.gallery-item a:after {
+    content: unset !important;
+}
+
+.gallery figure {
+    display: inline-grid;
+    padding: 2px;
+    margin-bottom: 0;
+}
+
+.gallery figure img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-columns-1 figure {
+    width: 100%;
+}
+
+.gallery-columns-2 figure {
+    width: 50%;
+}
+
+.gallery-columns-3 figure {
+    width: 33.333333%;
+}
+
+.gallery-columns-4 figure {
+    width: 25%;
+}
+
+.gallery-columns-5 figure {
+    width: 20%;
+}
+
+.gallery-columns-6 figure {
+    width: 16.666667%;
+}
+
+.gallery-columns-7 figure {
+    width: 14.2857%;
+}
+
+.gallery-columns-8 figure {
+    width: 12.5%;
+}
+
+.gallery-columns-9 figure {
+    width: 11.1111%;
+}
+
+.gallery {
+    margin: 0 -1px;
+}
+
+.gallery-columns-5 figure,
+.gallery-columns-6 figure,
+.gallery-columns-7 figure,
+.gallery-columns-8 figure,
+.gallery-columns-9 figure {
+    padding: 1px;
+    margin-bottom: 0;
+}
+
+.gallery-columns-5 figure figcaption,
+.gallery-columns-6 figure figcaption,
+.gallery-columns-7 figure figcaption,
+.gallery-columns-8 figure figcaption,
+.gallery-columns-9 figure figcaption {
+    font-size: 10px;
+}
+
+
+/* --Alignments Styles --- */
+
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-block-image .alignright.is-resized,
+.wp-block-image .alignleft.is-resized,
+.wp-block-image .aligncenter.is-resized,
+.alignright.img-fluid,
+.alignleft.img-fluid,
+.aligncenter.img-fluid {
+    display: block;
+    float: none;
+    text-align: right;
+}
+
+.wp-block-image .alignleft.is-resized {
+    text-align: left;
+}
+
+.wp-block-image .aligncenter.is-resized {
+    text-align: center;
+}
+
+.alignright.img-fluid {
+    margin-left: auto;
+}
+
+.alignleft.img-fluid {
+    margin-right: auto;
+}
+
+.aligncenter.img-fluid {
+    margin: 0 auto;
+}
+
+figcaption,
+.wp-caption-text,
+.gallery-caption {
+    font-size: 14px;
+    color: inherit;
+    margin-top: 4px;
+    text-align: center;
+}
+
+.widget .gallery-caption {
+    font-size: 12px;
+}
+
+
+/* -- to the top css -- */
+
+.btn-simple-podcast.up-btn {
+    position: fixed;
+    visibility: hidden;
+    bottom: 5%;
+    right: 15px;
+    padding: 0px;
+    width: 30px;
+    height: 35px;
+    outline: none !important;
+    transition: .3s;
+    transform: translate3d(100px, 0, 0);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.up-btn.view {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+}
+
+/* -- Animation To The Content -- */
+
+@keyframes scroll {
+    0% {
+        top: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 0;
+    }
+}

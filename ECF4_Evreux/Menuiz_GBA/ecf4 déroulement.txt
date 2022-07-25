@@ -1,0 +1,93 @@
+Lundi 27 Juin 2022 :
+__________________
+
+Gwen :
+*Création menu Administrateur ;
+*Réparations des bugs de chemins d'accés ;
+*Réparations des bugs de contenus de pages ;
+*Ajout de fonctionnalités en fonction des permissions ;
+
+Alexis :
+*-DossierSAV ;
+*-Details dossier ;
+*-Diagnostique ;
+*-Historique Dossier ;
+*-Mouvement de stock ;
+
+Olivier :
+*Modifications de la base de donnée depuis le MPD ;
+*Création des nouvelles tables et cardinalités ;
+
+Mardi 28 Juin :
+_____________
+
+Gwen :
+*Création Menu Administrateur ; 
+*réparation des bugs de chemin d'accès ;
+*réparation des bug du contenus des pages ;
+*Ajout de fonctionnalité en fonction de ses permissions ;
+
+Alexis :
+* Continue de créer les modeles pour 
+	-Diagnostic,
+	-Historique Dossier,
+	-Mouvements de stocks;
+
+Olivier :
+
+*Réparations cardinalités (essai avec Power AMC, workbench, phpMyAdmin);
+*Envoi des modifs au groupe sous forme de fichiers SQL;
+
+Mercredi 29 Juin :
+________________
+
+Gwen :
+*Finalisation menu Admin ;
+
+Alexis :
+*Faire les lien pour mener au sav depuis les roles Hotline et SAV
+*faire l'historique des dossier SAV
+
+Olivier :
+*Révision des FK ;
+*Adapter la BDD aux nouveaux modeles ;
+
+
+Jeudi 30 Juin :
+_____________
+
+Gwen :
+*Gestion des permissions aux nouveaux modeles ;
+
+Alexis :
+*Création nouvelles pages ;
+
+Olivier :
+*Mise à niveau de la BDD fonction des nouvelles pages et nouveaux modeles
+
+
+Vendredi 01 Juillet :
+___________________
+
+Gwen :
+*FONCTION recherche / creation de ticket >qui va dans une page "dossier SAV "/
+
+Alexis :
+*Creation des fonctions de recherches pour les dossiers SAV ;
+
+Olivier :
+*Recherche ticket ;
+*Créer les FK associées aux contraintes existantes ;
+
+
+Lundi 04 Juillet :
+________________
+
+Gwen:
+*FinalisationTicket SAV , dossier SAV
+
+Alexis:
+*fonction recherche pour dossier
+
+Olivier:
+*Page dossierSAV.php adaptations aux dernieres modifs de la BDD

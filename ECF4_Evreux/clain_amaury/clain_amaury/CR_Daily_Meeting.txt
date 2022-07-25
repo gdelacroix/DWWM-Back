@@ -1,0 +1,82 @@
+Compte rendu 27/06/2022 : 
+
+Aujourd'hui nous avons créer les tables de la base de données manquantes :
+
+- t_d_detailsav_dsv : 
+    - DSV_ID
+    - SAV_ID 
+    - PTY_ID
+
+- t_d_diagnostic_dgc : 
+    - DGC_ID
+    - DGC_STATUT
+    - SAV_ID
+
+- t_d_dossiersav_sav :
+    - SAV_ID
+    - SAV_NUM_DOSSIER
+    - SAV_TYPE
+
+- t_d_entrepot_etp : 
+    - ETP_ID
+    - ETP_TYPE
+
+- t_d_historique_his : 
+    - HIS_ID
+    - HIS_DATE
+    - HIS_HOUR
+    - SAV_ID
+    - USR_ID
+    - HIS_IP
+
+- t_d_mouventstock_mvt :
+    - MVT_ID
+    - PRD_ID
+    - ETP_ID
+
+Ajout de données à la table t_d_usertype_uty : 
+    - Technicien SAV
+    - Technicien Hotline
+
+Durant les 2 heures qu’il nous restent nous allons insérer dans la table Entrepôt les informations suivantes : 
+ - Stock Principal
+ - Stock SAV
+ - Rebus (Poubelle)
+Et nous allons commencer les modèles pour récupérer les informations de la BDD
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Compte rendu 28/06/2022 : 
+
+Aujourd'hui nous allons créer les modèles des tables : 
+ - Dossier SAV
+ - Détail SAV
+ - Diagnostic
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Compte rendu 30/06/2022:
+
+Bonjour, je vous transmet le Compte Rendu d'aujourd'hui 
+﻿
+Ce que nous avons fait hier : 
+- La fonctionnalité de recherche de Dossier SAV est presque terminée,
+- La fonctionnalité Détail des commandes SAV est presque terminée,
+﻿
+Ce que nous allons faire aujourd'hui :
+- Finir les fonctionnalités,
+- Créer la fonctionnalité Historique dossier SAV
+﻿
+Bonne journée
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Compte rendu 01/07/2022:
+
+Aujourd'hui nous avons fais la création de dossier pour l'utilisateur
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Compte rendu 04/07/2022 :
+
+Aujourd'hui nous allons résoudre les différents problèmes pour avancer sur les fonctionnalités

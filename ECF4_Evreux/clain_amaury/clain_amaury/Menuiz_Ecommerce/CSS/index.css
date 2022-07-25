@@ -1,0 +1,14 @@
+.container-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.container-card>form {
+    border-radius: 3%;
+    border: 1px solid black;
+    padding: 5px;
+    background: #e3f2fd;
+    text-align: center;
+}

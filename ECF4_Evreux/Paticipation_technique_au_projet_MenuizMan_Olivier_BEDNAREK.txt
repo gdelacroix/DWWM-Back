@@ -1,0 +1,16 @@
+Mon travail sur cet ECF de groupe aura été de de remanier la base de données.
+Tout au long de l'examen, j'ai du reprendre ou créer plusieurs tables pour permettre
+ aux nouvelles fonctoionnalités de pointer sur de nouvelles données.
+Par exemple: La création de tickets incidents 
+Nous a fait créer trois nouvelles tables concernant respectivement Le ticket SAV, 
+les détails du ticket ainsi qu'une autre table pour l'historisation de ces tickets. 
+
+La principale difficulté à mes yeux aura été d'utiliser Workbench ou phpMyAdmin pour 
+la création de ces tables.
+Au final j'ai préféré réécrire les tables en SQL, ne parvenant pas à créer les clés étrangères 
+ou les contraintes de ces liaisons sur ces deux logiciels.
+
+La répartition du travail lors de cet exercice n'aura pas été fructueuse du fait 
+que chacun a fait ce pourquoi il était le plus à l'aise (donc sql pour moi)
+ et je n'ai pas achevé le seul fichier php qui m'a été confié en fin de "mission"(dossierSAV.php).
+
